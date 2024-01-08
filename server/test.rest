@@ -1,0 +1,40 @@
+@baseurl=http://localhost:5000
+@studentId=657719a9ee2d98e9c1def5f9
+GET {{baseurl}}/students/ HTTP/1.1
+// get all students
+###
+
+GET {{baseurl}}/students/{{studentId}} HTTP/1.1
+// get a single student
+###
+POST {{baseurl}}/students/send/userdetails/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "studentname":"Kumar",
+    "studentage":20
+}
+// next ui
+###
+POST {{baseurl}}/students/validate HTTP/1.1
+Content-Type: application/json
+
+{     
+    "username":"prathap",
+     "password":"12345"
+}
+###
+DELETE {{baseurl}}/students/{{studentId}}/delete HTTP/1.1
+// delete a student
+###
+PUT {{baseurl}}/students/{{studentId}}/update HTTP/1.1
+Content-Type: application/json
+
+{
+   
+    "studentname":"Kumar",
+    "studentage":19
+}
+
+
+// mongoose , express.json() ,post request
